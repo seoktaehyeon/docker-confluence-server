@@ -1,0 +1,7 @@
+#!/bin/bash
+set -ex
+java -jar /opt/atlassian/tool/atlassian-agent.jar \
+    -o odo \
+    -m odo@qualitysphere.github.io \
+    -p conf \
+    -s "${1?'Server ID is required'}"
