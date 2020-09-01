@@ -1,7 +1,11 @@
 #!/bin/bash
 set -ex
-CONFLUENCE_LOG="/var/atlassian/application-data/confluence/logs/atlassian-confluence.log"
-CONFLUENCE_SERVER_ID=$(grep serverId ${CONFLUENCE_LOG} | tail -1 | awk '{print $NF}')
+CONFLUENCE_LOG_DIR="/var/atlassian/application-data/confluence/logs"
+CONFLUENCE_SERVER_ID=$(grep serverId ${CONFLUENCE_LOG_DIR}/* | tail -1 | awk '{print $NF}')
+[[ -z "${CONFLUENCE_SERVER_ID}" ]] && {
+    echo "Cannot get Confluence Server ID"
+    exit 1
+}
 java -jar /opt/atlassian/tool/atlassian-agent.jar \
     -o odo \
     -m odo@qualitysphere.github.io \

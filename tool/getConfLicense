@@ -1,7 +1,7 @@
 #!/bin/bash
 set -ex
-CONFLUENCE_LOG="/var/atlassian/application-data/confluence/logs/atlassian-confluence.log"
-CONFLUENCE_SERVER_ID=$(grep serverId ${CONFLUENCE_LOG} | tail -1 | awk '{print $NF}')
+CONFLUENCE_LOG_DIR="/var/atlassian/application-data/confluence/logs"
+CONFLUENCE_SERVER_ID=$(grep serverId ${CONFLUENCE_LOG_DIR}/* | tail -1 | awk '{print $NF}')
 [[ -z "${CONFLUENCE_SERVER_ID}" ]] && CONFLUENCE_SERVER_ID="${1?'Server ID is required'}"
 java -jar /opt/atlassian/tool/atlassian-agent.jar \
     -o odo \
