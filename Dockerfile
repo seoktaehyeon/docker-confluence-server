@@ -5,7 +5,6 @@ LABEL maintainer="v.stone@163.com" \
 COPY tool/mysql-connector-java-5.1.49.jar /opt/atlassian/confluence/lib/mysql-connector-java-5.1.49.jar
 COPY tool/atlassian-agent.jar /opt/atlassian/tool/atlassian-agent.jar
 COPY tool/SSLPoke.class /opt/atlassian/tool/SSLPoke.class
-COPY tool/atlCmd /usr/local/bin/atlCmd
 COPY tool/getConfLicense /usr/local/bin/getConfLicense
 COPY tool/getPluginLicense /usr/local/bin/getPluginLicense
 RUN chmod +x /usr/local/bin/getConfLicense && \
