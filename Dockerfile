@@ -1,4 +1,4 @@
-FROM atlassian/confluence-server:7.5
+FROM atlassian/confluence-server:7.9
 LABEL maintainer="v.stone@163.com" \
       jdbc_url="https://confluence.atlassian.com/doc/database-jdbc-drivers-171742.html" \
       agent_url="https://gitee.com/pengzhile/atlassian-agent"
