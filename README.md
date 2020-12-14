@@ -1,15 +1,19 @@
 ## Highlight
 
-- Base image is `atlassian/confluence-server:7.9`
-- Image digest is `95991a2dccaa`
+- Base image is [`atlassian/confluence-server:7.9`](https://hub.docker.com/r/atlassian/confluence-server/tags?page=1&ordering=-name&name=7.9)
+- Image digest is `43742d73e6f6`
 - Support `MySQL`
 - Timezone is `Asia/Shanghai`
+- Support `Chinese`
 - Contains `SSLPoke.class`
 - License tool: `getConfLicense` and `getPluginLicense`
-- Support Chinese
 
 ## How to install/start Jira Software
 
 ```bash
-docker run -d -p 8080:8080 -v /jira-data:/var/atlassian/application-data/jira -it bxwill/jira-software:8.12
+docker run -d -p 8090:8090 -p 8091:8091 -v /conf-data:/var/atlassian/application-data/confluence -it bxwill/confluence-server:7.9
 ```
+
+## More
+
+- [GitHub](https://github.com/seoktaehyeon/docker-confluence-server)

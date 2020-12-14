@@ -9,9 +9,10 @@ COPY tool/getConfLicense /usr/local/bin/getConfLicense
 COPY tool/getPluginLicense /usr/local/bin/getPluginLicense
 RUN chmod +x /usr/local/bin/getConfLicense && \
     chmod +x /usr/local/bin/getPluginLicense && \
+    chmod -R 777 /opt/atlassian/tool/ && \
     cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
     echo 'Asia/Shanghai' > /etc/timezone
 ADD https://qualitysphere.github.io/objects/msyh.ttf /usr/share/fonts
-RUN fc-cache -fv
+RUN chmod 777 /usr/share/fonts/msyh.ttf && fc-cache -fv
 ENV JAVA_OPTS="-javaagent:/opt/atlassian/tool/atlassian-agent.jar"
 
