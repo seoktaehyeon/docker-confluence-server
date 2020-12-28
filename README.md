@@ -1,7 +1,7 @@
 ## Highlight
 
 - Base image is [`atlassian/confluence-server:7.9`](https://hub.docker.com/r/atlassian/confluence-server/tags?page=1&ordering=-name&name=7.9)
-- Image digest is `43742d73e6f6`
+- Image digest is `4fcbdeaf015a`
 - Support `MySQL`
 - Timezone is `Asia/Shanghai`
 - Support `Chinese`
